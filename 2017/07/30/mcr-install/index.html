@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://yoursite.com/images/img/cmp5.png">
 <meta property="og:image" content="http://yoursite.com/images/img/cmp2.png">
 <meta property="og:image" content="http://yoursite.com/images/img/cmp3.png">
-<meta property="og:updated_time" content="2018-04-22T14:56:41.519Z">
+<meta property="og:updated_time" content="2018-04-23T02:20:20.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用MCR脱离了matlab环境">
 <meta name="twitter:description" content="MCR在Ubuntu16.04.2-LTS安装假设你有一大串matlab代码，想把这些代码移植到某个软件上，将matlab改写成C/C++无疑是最好的，但是很需要时间，比较简单的办法将m文件编译成动态库供C/C++调用，但这需要在本地安装MCR。这样就可以避免安装matlab了。">
@@ -171,7 +171,7 @@ var _hmt = _hmt || [];
       
         <h2 id="MCR在Ubuntu16-04-2-LTS安装"><a href="#MCR在Ubuntu16-04-2-LTS安装" class="headerlink" title="MCR在Ubuntu16.04.2-LTS安装"></a><strong>MCR在Ubuntu16.04.2-LTS安装</strong></h2><p>假设你有一大串matlab代码，想把这些代码移植到某个软件上，将matlab改写成C/C++无疑是最好的，但是很需要时间，比较简单的办法将m文件编译成动态库供C/C++调用，但这需要在本地安装MCR。这样就可以避免安装matlab了。</p>
 <a id="more"></a>
-<p>我的脑上本身就安装了matlab，MCR压缩包位于:</p>
+<p>电脑安装的matlab，其MCR压缩包位于:</p>
 <p><code>/usr/local/R2012a/toolbox/compiler/deploy/glnxa64/MCRInstaller.zip</code>，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo  mkdir  /usr/<span class="built_in">local</span>/R2012a/MATLAB_Compiler_Runtime</span><br><span class="line">sudo cp  /usr/<span class="built_in">local</span>/R2012a/toolbox/compiler/deploy/glnxa64/MCRInstaller.zip   /usr/<span class="built_in">local</span>/R2012a/MATLAB_Compiler_Runtime</span><br><span class="line">sudo chmod 777 /usr/<span class="built_in">local</span>/R2012a/MATLAB_Compiler_Runtime</span><br><span class="line">unzip MCRInstaller.zip</span><br><span class="line">./install</span><br></pre></td></tr></table></figure></p>
 <p>将下面提示的动态路径添加到 ~/.bashrc 中</p>
 <p><img src="/images/img/1.png" alt="matlab"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export  LD_LIBRARY_PATH=<span class="variable">$&#123;LD_LIBRARY_PATH&#125;</span>:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/runtime/glnxa64:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/bin/glnxa64:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/sys/os/glnxa64:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/MATLAB/R2012a/MATLAB_Compiler_Runtime/v717/sys/java/jre/glnxa64/jre/lib/amd64"</span> &gt;&gt;  ~/.bashrc</span><br><span class="line"><span class="built_in">source</span>  ~/.bashrc</span><br></pre></td></tr></table></figure></p>
@@ -452,15 +452,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Obspy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">obspy</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">地震目录格式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Obspy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,15 +472,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">震源机制</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">画图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
               </li>
              
               <li class="article-tag-list-item">
