@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>利用Python下的FastKML包读取KML文件 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
+  <meta name="description" content="在网上下载的台站信息一般会被xml标准包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。而有的台站信息是被kml形式包装的，其实KML(介绍)完全符合XML标准。下面会讲到如何用FastKML提取KML格式的数据。">
 <meta name="keywords" content="kml,xml">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用Python下的FastKML包读取KML文件">
 <meta property="og:url" content="http://yoursite.com/2018/05/08/readkmlbypython/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
+<meta property="og:description" content="在网上下载的台站信息一般会被xml标准包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。而有的台站信息是被kml形式包装的，其实KML(介绍)完全符合XML标准。下面会讲到如何用FastKML提取KML格式的数据。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-08T08:03:45.543Z">
+<meta property="og:updated_time" content="2018-05-08T08:16:01.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Python下的FastKML包读取KML文件">
-<meta name="twitter:description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
+<meta name="twitter:description" content="在网上下载的台站信息一般会被xml标准包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。而有的台站信息是被kml形式包装的，其实KML(介绍)完全符合XML标准。下面会讲到如何用FastKML提取KML格式的数据。">
   
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
@@ -157,8 +157,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用<a href="https://fastkml.readthedocs.io/en/latest/quickstart.html" target="_blank" rel="noopener">FastKML</a>提取KML格式的数据。</p>
-<p><a href="https://developers.google.com/kml/documentation/kml_tut?hl=zh-cn" target="_blank" rel="noopener">KML</a>是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 Google 地图移动版中显示数据。</p>
+        <p>在网上下载的台站信息一般会被xml标准包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。而有的台站信息是被kml形式包装的，其实KML(<a href="https://developers.google.com/kml/documentation/kml_tut?hl=zh-cn" target="_blank" rel="noopener">介绍</a>)完全符合XML标准。下面会讲到如何用<a href="https://fastkml.readthedocs.io/en/latest/quickstart.html" target="_blank" rel="noopener">FastKML</a>提取KML格式的数据。</p>
 <a id="more"></a>
 <h2 id="修改IRIS上下载的kml"><a href="#修改IRIS上下载的kml" class="headerlink" title="修改IRIS上下载的kml"></a>修改IRIS上下载的kml</h2><p>这是从<a href="http://ds.iris.edu/gmap/#network=AU&amp;latitude=-23.926&amp;longitude=133.6816&amp;maxradius=0.9326&amp;drawingmode=radial&amp;synthetic=on&amp;planet=earth" target="_blank" rel="noopener">IRIS</a>下载的澳大利亚的一个台阵，kml文件部分信息显示如下：</p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;Document xmlns:atom=<span class="string">"http://www.w3.org/2005/Atom"</span> xmlns:gx=<span class="string">"http://www.google.com/kml/ext/2.2"</span> xmlns=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span><br><span class="line">  &lt;name&gt;GMAP Stations&lt;/name&gt;</span><br><span class="line">  &lt;Style id=<span class="string">"33CC33"</span>&gt;</span><br><span class="line">    &lt;IconStyle&gt;</span><br><span class="line">      &lt;Icon&gt;</span><br><span class="line">        &lt;href&gt;http:<span class="comment">//ds.iris.edu/static/img/markers/circle-dot-10x10-33CC33.27295a36c313.png&lt;/href&gt;</span></span><br><span class="line">      &lt;/Icon&gt;</span><br><span class="line">    &lt;/IconStyle&gt;</span><br><span class="line">  &lt;/Style&gt;</span><br><span class="line">  &lt;Placemark&gt;</span><br><span class="line">    &lt;name&gt;AU.AS01&lt;/name&gt;</span><br><span class="line">    &lt;styleUrl&gt;#<span class="number">33</span>CC33&lt;/styleUrl&gt;</span><br><span class="line">    &lt;Point&gt;</span><br><span class="line">      &lt;coordinates&gt;<span class="number">133.950806</span>,<span class="number">-23.6647</span>&lt;/coordinates&gt;</span><br><span class="line">    &lt;/Point&gt;</span><br><span class="line">    &lt;Style&gt;</span><br><span class="line">      &lt;BalloonStyle&gt;</span><br><span class="line">        &lt;text&gt;&amp;<span class="keyword">lt</span>;<span class="built-in">div</span> style=<span class="string">'width: 275px;'</span>&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;h4&amp;<span class="keyword">gt</span>;AU AS01&amp;<span class="keyword">lt</span>;/h4&amp;<span class="keyword">gt</span>;Alice Springs Array Element <span class="number">01</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Geoscience Australia&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Data Center: &amp;<span class="keyword">lt</span>;a href=<span class="string">'http://ds.iris.edu'</span>&amp;<span class="keyword">gt</span>;IRISDMC&amp;<span class="keyword">lt</span>;/a&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Operating Range: <span class="number">2003</span><span class="number">-08</span><span class="number">-13</span> - <span class="number">2599</span><span class="number">-12</span><span class="number">-31</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Geographic Location: <span class="number">-23.6647</span>, <span class="number">133.950806</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;a href=<span class="string">'https://ds.iris.edu/mda/AU/AS01?timewindow=2003-2599'</span>&amp;<span class="keyword">gt</span>;More Information&amp;<span class="keyword">lt</span>;/a&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;/<span class="built-in">div</span>&amp;<span class="keyword">gt</span>;&lt;/text&gt;</span><br><span class="line">      &lt;/BalloonStyle&gt;</span><br><span class="line">    &lt;/Style&gt;</span><br><span class="line">  &lt;/Placemark&gt;</span><br><span class="line"> &lt;/Document&gt;</span><br></pre></td></tr></table></figure>
@@ -269,8 +268,8 @@ var _hmt = _hmt || [];
 <nav id="article-nav">
   
   
-    <a href="/2018/05/04/The-CLEAN-algorithm/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/05/02/travel-home-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Something you should know</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -427,15 +426,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MCR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,6 +439,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">xml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
