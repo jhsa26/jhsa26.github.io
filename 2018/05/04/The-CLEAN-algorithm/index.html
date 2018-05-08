@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/5 | </title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="#CLEAN算法CLEAN算法家族的思想是基于一个先验假设，假设空间上是有一些点源组成的。 assumes that the radio sky can be represented by a small number of point sources in an otherwise empty field of view. Aperture synthesis with a non-regula">
+<meta property="og:type" content="article">
 <meta property="og:title">
-<meta property="og:url" content="http://yoursite.com/archives/2018/05/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/The-CLEAN-algorithm/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="#CLEAN算法CLEAN算法家族的思想是基于一个先验假设，假设空间上是有一些点源组成的。 assumes that the radio sky can be represented by a small number of point sources in an otherwise empty field of view. Aperture synthesis with a non-regula">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-05T09:38:17.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title">
+<meta name="twitter:description" content="#CLEAN算法CLEAN算法家族的思想是基于一个先验假设，假设空间上是有一些点源组成的。 assumes that the radio sky can be represented by a small number of point sources in an otherwise empty field of view. Aperture synthesis with a non-regula">
   
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
@@ -132,108 +136,156 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-The-CLEAN-algorithm" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#CLEAN算法<br>CLEAN算法家族的思想是基于一个先验假设，假设空间上是有一些点源组成的。</p>
+<p>assumes that the radio sky can be represented by a small number of point sources in an otherwise empty field of view.</p>
+<p>Aperture synthesis with a non-regular distribution of interferometer baselines</p>
+<p>the family of CLEAN algorithms is based on the a priori assumption that the sky intensity distribution is a collection of point sources. The algorithms have three main steps</p>
+<ol>
+<li>Initialization<ul>
+<li>of the residual map to the dirty map</li>
+<li>and of the clean component list to NULL (<em>i.e.</em> zero) value     </li>
+</ul>
+</li>
+<li><p>Iterative search</p>
+<ul>
+<li>they are subtracted from the residual map</li>
+<li>and then they are logged in the lean component list</li>
+</ul>
+</li>
+<li><p>Restoration</p>
+<p> of the clean map 1) by convolution the clean component list with the clean beam, <em>i.e.</em> a Gaussian whose size mathes the synthesized beam size and 2) by addition of the redisual map.</p>
+</li>
+</ol>
+<h1 id="The-Hogbom-algorithm"><a href="#The-Hogbom-algorithm" class="headerlink" title="The Högbom algorithm"></a>The Högbom algorithm</h1><p>This algorithm proceeds as follows:</p>
+<ol>
+<li>Find the strength and position of the peak (i.e., of the greatest absolute intensity) in the dirty image  tex2html_wrap_inline877 .</li>
+<li>Subtract from the dirty image, at the position of the peak, the dirty beam B multiplied by the peak strength and a damping factor  tex2html_wrap_inline927 ( tex2html_wrap_inline929 , usually termed the loop gain).</li>
+<li>Go to (1) unless any remaining peak is below some user-specified level. The search for peaks may be constrained to specified areas of the image, called `CLEAN’ windows.</li>
+<li>Convolve the accumulated point source model  tex2html_wrap_inline809 with an idealized `CLEAN’ beam (usually an elliptical Gaussian fitted to the central lobe of the dirty beam).</li>
+<li>Add the residuals of the dirty image to the `CLEAN’ image.</li>
+</ol>
+<p>The fifth step is sometimes omitted, but it is recommended because it can provide useful diagnostic information about the noise on the image, residual sidelobes, <code></code>bowls’’ near the image center (see the problem of short spacings).</p>
+<h1 id="The-Clark-algorithm"><a href="#The-Clark-algorithm" class="headerlink" title="The Clark algorithm"></a>The Clark algorithm</h1><p>Much of the computation in <code>CLEAN&#39; consists of shifting and scaling the dirty beam. As this is essentially a convolution it may, in some circumstances, be done more efficiently with 2-d FFTs. Clark&#39;s (1980)</code>CLEAN’ algorithm does this, finding approximate positions and strengths of the point components using only a small patch of the dirty beam.</p>
+<p>In detail, the Clark algorithm has two cycles, known as <code>minor&#39;&#39; and</code>major’’ cycles. The minor cycle proceeds as follows:</p>
+<ol>
+<li>A beam patch (a segment of the discrete representation of the beam) is selected to include the highest exterior sidelobe.</li>
+<li>Points are selected from the dirty image if they have an intensity, as a fraction of the image peak, greater than the highest exterior sidelobe of the beam.</li>
+<li>A Högbom <code>CLEAN&#39; is performed using the beam patch and the selected points of the dirty image. The stopping criterion for the</code>CLEAN’ is roughly such that any remaining points would not be selected in step (2).</li>
+</ol>
+<p>The algorithm then does a major cycle wherein the point source model found by the minor cycle is transformed via an FFT, multiplied by the weighted sampling function (inverse transform of the beam), transformed back, and subtracted from the dirty image. Errors introduced in a minor cycle by the beam patch approximation are, to some extent, corrected in subsequent minor cycles.</p>
+<p>CLEAN算法是一种有效的反卷积算法，已在通信信道提取、天文图像质量提高等方面有了广泛的应用。利用CLEAN算法可以有效地抑制旁瓣信号，提高反演成像的准确率。</p>
+<p>![a] <a href="https://www.iram.fr/IRAMFR/GILDAS/doc/html/map-html/node38.html" target="_blank" rel="noopener">https://www.iram.fr/IRAMFR/GILDAS/doc/html/map-html/node38.html</a><br>![]Högbom, J. (1974), <code></code>Aperture synthesis with a non-regular distribution of interferometer baselines’’, Astrophys. J. Suppl. Ser., 15, 417-426.<br>![]<a href="https://www.cv.nrao.edu/~abridle/deconvol/node12.html" target="_blank" rel="noopener">https://www.cv.nrao.edu/~abridle/deconvol/node12.html</a><br>![]<a href="https://www.cv.nrao.edu/~abridle/deconvol/node1.html" target="_blank" rel="noopener">https://www.cv.nrao.edu/~abridle/deconvol/node1.html</a><br>![]孙维蔷, 王华忠, &amp; 符琼琲. (2017). 空间方向谱估计 CLEAN 算法及其在地震数据处理中的应用. 石油地球物理勘探, 52(1), 20-26.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/The-CLEAN-algorithm/" class="archive-article-date">
-  	<time datetime="2018-05-04T03:01:06.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/04/The-CLEAN-algorithm/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/03/pycharm-tutorial/" class="archive-article-date">
-  	<time datetime="2018-05-03T08:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/03/pycharm-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pycharm tutorial</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/03/pycharm-tutorial/">pycharm tutorial</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/02/travel-home-md/" class="archive-article-date">
-  	<time datetime="2018-05-02T07:39:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/02/travel-home-md/">Something you should know</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">some feelings</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -256,8 +308,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
