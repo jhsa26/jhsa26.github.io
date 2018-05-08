@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 地震学 | </title>
+  <title>利用Python下的FastKML包读取KML文件 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="http://yoursite.com/categories/地震学/index.html">
+  <meta name="description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
+<meta name="keywords" content="kml,xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Python下的FastKML包读取KML文件">
+<meta property="og:url" content="http://yoursite.com/2018/05/08/readkmlbypython/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-08T08:03:45.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title">
+<meta name="twitter:title" content="利用Python下的FastKML包读取KML文件">
+<meta name="twitter:description" content="经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用FastKML提取KML格式的数据。 KML是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 G">
   
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
@@ -132,36 +137,47 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-readkmlbypython" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/08/readkmlbypython/" class="archive-article-date">
-  	<time datetime="2018-05-08T03:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/08/readkmlbypython/">利用Python下的FastKML包读取KML文件</a>
+    <h1 class="article-title" itemprop="name">
+      利用Python下的FastKML包读取KML文件
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/08/readkmlbypython/" class="archive-article-date">
+  	<time datetime="2018-05-08T03:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>经常会碰到很多数据都用xml标准包装，这种格式便于数据交换。从网上下载的台站信息也会被xml包装，如果需要提取很多台站信息的话，不可能从xml中手动提取出来。我从网站上下载了几个台站的信息，是kml格式的，这种格式完全符合xml标准。下面会讲到如何用<a href="https://fastkml.readthedocs.io/en/latest/quickstart.html" target="_blank" rel="noopener">FastKML</a>提取KML格式的数据。</p>
+<p><a href="https://developers.google.com/kml/documentation/kml_tut?hl=zh-cn" target="_blank" rel="noopener">KML</a>是一种用于显示地理数据的格式，完全符合XML标准。它用于例如 Google 地球、Google 地图和 Google 地图移动版中显示数据。</p>
+<a id="more"></a>
+<h2 id="修改IRIS上下载的kml"><a href="#修改IRIS上下载的kml" class="headerlink" title="修改IRIS上下载的kml"></a>修改IRIS上下载的kml</h2><p>这是从<a href="http://ds.iris.edu/gmap/#network=AU&amp;latitude=-23.926&amp;longitude=133.6816&amp;maxradius=0.9326&amp;drawingmode=radial&amp;synthetic=on&amp;planet=earth" target="_blank" rel="noopener">IRIS</a>下载的澳大利亚的一个台阵，kml文件部分信息显示如下：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;Document xmlns:atom=<span class="string">"http://www.w3.org/2005/Atom"</span> xmlns:gx=<span class="string">"http://www.google.com/kml/ext/2.2"</span> xmlns=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span><br><span class="line">  &lt;name&gt;GMAP Stations&lt;/name&gt;</span><br><span class="line">  &lt;Style id=<span class="string">"33CC33"</span>&gt;</span><br><span class="line">    &lt;IconStyle&gt;</span><br><span class="line">      &lt;Icon&gt;</span><br><span class="line">        &lt;href&gt;http:<span class="comment">//ds.iris.edu/static/img/markers/circle-dot-10x10-33CC33.27295a36c313.png&lt;/href&gt;</span></span><br><span class="line">      &lt;/Icon&gt;</span><br><span class="line">    &lt;/IconStyle&gt;</span><br><span class="line">  &lt;/Style&gt;</span><br><span class="line">  &lt;Placemark&gt;</span><br><span class="line">    &lt;name&gt;AU.AS01&lt;/name&gt;</span><br><span class="line">    &lt;styleUrl&gt;#<span class="number">33</span>CC33&lt;/styleUrl&gt;</span><br><span class="line">    &lt;Point&gt;</span><br><span class="line">      &lt;coordinates&gt;<span class="number">133.950806</span>,<span class="number">-23.6647</span>&lt;/coordinates&gt;</span><br><span class="line">    &lt;/Point&gt;</span><br><span class="line">    &lt;Style&gt;</span><br><span class="line">      &lt;BalloonStyle&gt;</span><br><span class="line">        &lt;text&gt;&amp;<span class="keyword">lt</span>;<span class="built-in">div</span> style=<span class="string">'width: 275px;'</span>&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;h4&amp;<span class="keyword">gt</span>;AU AS01&amp;<span class="keyword">lt</span>;/h4&amp;<span class="keyword">gt</span>;Alice Springs Array Element <span class="number">01</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Geoscience Australia&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Data Center: &amp;<span class="keyword">lt</span>;a href=<span class="string">'http://ds.iris.edu'</span>&amp;<span class="keyword">gt</span>;IRISDMC&amp;<span class="keyword">lt</span>;/a&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Operating Range: <span class="number">2003</span><span class="number">-08</span><span class="number">-13</span> - <span class="number">2599</span><span class="number">-12</span><span class="number">-31</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;Geographic Location: <span class="number">-23.6647</span>, <span class="number">133.950806</span>&amp;<span class="keyword">lt</span>;br /&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;a href=<span class="string">'https://ds.iris.edu/mda/AU/AS01?timewindow=2003-2599'</span>&amp;<span class="keyword">gt</span>;More Information&amp;<span class="keyword">lt</span>;/a&amp;<span class="keyword">gt</span>;&amp;<span class="keyword">lt</span>;/<span class="built-in">div</span>&amp;<span class="keyword">gt</span>;&lt;/text&gt;</span><br><span class="line">      &lt;/BalloonStyle&gt;</span><br><span class="line">    &lt;/Style&gt;</span><br><span class="line">  &lt;/Placemark&gt;</span><br><span class="line"> &lt;/Document&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="补充缺失的说明信息"><a href="#补充缺失的说明信息" class="headerlink" title="补充缺失的说明信息"></a>补充缺失的说明信息</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">文件开头加入的语句</span><br><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">kml</span> <span class="attr">xmlns</span>=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">文件末尾加入的语句</span><br><span class="line"><span class="tag">&lt;/<span class="name">kml</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改后的kml形式"><a href="#修改后的kml形式" class="headerlink" title="修改后的kml形式"></a>修改后的kml形式</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">kml</span> <span class="attr">xmlns</span>=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Document</span> <span class="attr">xmlns:atom</span>=<span class="string">"http://www.w3.org/2005/Atom"</span> <span class="attr">xmlns:gx</span>=<span class="string">"http://www.google.com/kml/ext/2.2"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>GMAP Stations<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Style</span> <span class="attr">id</span>=<span class="string">"33CC33"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">IconStyle</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Icon</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">href</span>&gt;</span>http://ds.iris.edu/static/img/markers/circle-dot-10x10-33CC33.27295a36c313.png<span class="tag">&lt;/<span class="name">href</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Icon</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">IconStyle</span>&gt;</span></span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Placemark</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>AU.AS01<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">styleUrl</span>&gt;</span>#33CC33<span class="tag">&lt;/<span class="name">styleUrl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Point</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">coordinates</span>&gt;</span>133.950806,-23.6647<span class="tag">&lt;/<span class="name">coordinates</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Point</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">BalloonStyle</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span>&gt;</span>&amp;lt;div style='width: 275px;'&amp;gt;&amp;lt;h4&amp;gt;AU AS01&amp;lt;/h4&amp;gt;Alice Springs Array Element 01&amp;lt;br /&amp;gt;Geoscience Australia&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Data Center: &amp;lt;a href='http://ds.iris.edu'&amp;gt;IRISDMC&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;Operating Range: 2003-08-13 - 2599-12-31&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Geographic Location: -23.6647, 133.950806&amp;lt;br /&amp;gt;&amp;lt;a href='https://ds.iris.edu/mda/AU/AS01?timewindow=2003-2599'&amp;gt;More Information&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">BalloonStyle</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Placemark</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">Document</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">kml</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Fastkml-安装"><a href="#Fastkml-安装" class="headerlink" title="Fastkml 安装"></a>Fastkml 安装</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> fastkml</span><br></pre></td></tr></table></figure>
+<h2 id="提取台站信息的py2脚本"><a href="#提取台站信息的py2脚本" class="headerlink" title="提取台站信息的py2脚本"></a>提取台站信息的py2脚本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastkml <span class="keyword">import</span> kml</span><br><span class="line"><span class="keyword">with</span> open(‘gmap-stations.kml’,<span class="string">'rt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    doc=f.read()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Create the KML object to store the parsed result</span></span><br><span class="line">k = kml.KML()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read in the KML string</span></span><br><span class="line">k.from_string(doc)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  Check that the number of features is correct</span></span><br><span class="line"><span class="comment">#  This corresponds to the single "Document" </span></span><br><span class="line">features = list(k.features())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check that we can access the features as a generator</span></span><br><span class="line"></span><br><span class="line">f2 = list(features[<span class="number">0</span>].features())</span><br><span class="line"></span><br><span class="line"><span class="comment">#output the position of stations</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'station.loc'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	<span class="keyword">for</span> sta <span class="keyword">in</span> f2:</span><br><span class="line">		f.write(sta.name+<span class="string">'\t'</span>+str(sta.geometry.x)+<span class="string">'\t'</span>+str(sta.geometry.y)+<span class="string">'\n'</span>)</span><br><span class="line">		<span class="keyword">print</span> sta.name, sta.geometry.x, sta.geometry.y</span><br></pre></td></tr></table></figure>
+<p>输出信息</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS01</span> 133<span class="selector-class">.950806</span> <span class="selector-tag">-23</span><span class="selector-class">.6647</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS02</span> 133<span class="selector-class">.936905</span> <span class="selector-tag">-23</span><span class="selector-class">.679199</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS03</span> 133<span class="selector-class">.919693</span> <span class="selector-tag">-23</span><span class="selector-class">.677401</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS04</span> 133<span class="selector-class">.929199</span> <span class="selector-tag">-23</span><span class="selector-class">.6597</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS05</span> 133<span class="selector-class">.947495</span> <span class="selector-tag">-23</span><span class="selector-class">.6492</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS06</span> 133<span class="selector-class">.971405</span> <span class="selector-tag">-23</span><span class="selector-class">.647499</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS07</span> 133<span class="selector-class">.969696</span> <span class="selector-tag">-23</span><span class="selector-class">.6656</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS08</span> 133<span class="selector-class">.960007</span> <span class="selector-tag">-23</span><span class="selector-class">.6814</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS09</span> 133<span class="selector-class">.941406</span> <span class="selector-tag">-23</span><span class="selector-class">.6994</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS10</span> 133<span class="selector-class">.913895</span> <span class="selector-tag">-23</span><span class="selector-class">.696899</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS11</span> 133<span class="selector-class">.897797</span> <span class="selector-tag">-23</span><span class="selector-class">.678301</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS12</span> 133<span class="selector-class">.904404</span> <span class="selector-tag">-23</span><span class="selector-class">.666401</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS13</span> 133<span class="selector-class">.894394</span> <span class="selector-tag">-23</span><span class="selector-class">.651899</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS14</span> 133<span class="selector-class">.910294</span> <span class="selector-tag">-23</span><span class="selector-class">.651699</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS15</span> 133<span class="selector-class">.912201</span> <span class="selector-tag">-23</span><span class="selector-class">.635599</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS16</span> 133<span class="selector-class">.929993</span> <span class="selector-tag">-23</span><span class="selector-class">.6369</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS17</span> 133<span class="selector-class">.991699</span> <span class="selector-tag">-23</span><span class="selector-class">.6644</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS18</span> 133<span class="selector-class">.980804</span> <span class="selector-tag">-23</span><span class="selector-class">.690001</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS19</span> 133<span class="selector-class">.962494</span> <span class="selector-tag">-23</span><span class="selector-class">.704399</span></span><br><span class="line"><span class="selector-tag">AU</span><span class="selector-class">.AS31</span> 133<span class="selector-class">.904007</span> <span class="selector-tag">-23</span><span class="selector-class">.666</span></span><br></pre></td></tr></table></figure>
+<h2 id="台站信息来源网站"><a href="#台站信息来源网站" class="headerlink" title="台站信息来源网站"></a>台站信息来源网站</h2><p><a href="https://www.fdsn.org/networks/?permanent=0" target="_blank" rel="noopener">FDSN查看台站信息</a>，这里列出台网代号等供查询，可以查询永久台站和流动台站信息。</p>
+<p><a href="http://ds.iris.edu/gmap/#network=NO&amp;synthetic=on&amp;planet=earth" target="_blank" rel="noopener">在IRIS下的gmap</a>下载台站信息。这里需要自己输入台网代号和台站名字。台站信息存储的格式为KML格式</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -177,119 +193,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/地震学/" class="article-tag-list-link color4">地震学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/03/FocalMechanism/" class="archive-article-date">
-  	<time datetime="2018-04-03T06:51:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/03/FocalMechanism/">Matlab画震源球</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">震源机制</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">画图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/地震学/" class="article-tag-list-link color4">地震学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/15/FindEarth/" class="archive-article-date">
-  	<time datetime="2017-08-15T13:09:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/15/FindEarth/">寻找重复地震</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">重复地震</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -302,66 +206,102 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/08/readkmlbypython/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/29/software-md/" class="archive-article-date">
-  	<time datetime="2017-07-29T13:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/04/The-CLEAN-algorithm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/29/software-md/">Software Collection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/地震学/" class="article-tag-list-link color4">地震学</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -384,10 +324,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
