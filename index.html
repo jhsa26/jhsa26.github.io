@@ -16,6 +16,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jing&#39;s Note">
   
+    <link rel="alternative" href="/atom.xml" title="Jing&#39;s Note" type="application/atom+xml">
+  
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -61,6 +63,8 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/tags/随笔/">随笔</a></li>
+	        
 				<li><a href="/about">关于</a></li>
 	        
 			</ul>
@@ -68,7 +72,11 @@ var _hmt = _hmt || [];
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">搜索</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">链接</a>
     			
             
 		</nav>
@@ -105,6 +113,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -116,12 +126,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/about">关于</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/about">关于</a></li>
 		        
 				</ul>
 			</nav>
@@ -137,6 +149,80 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-a" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/13/a/">a</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/13/a/" class="archive-article-date">
+  	<time datetime="2018-05-13T03:02:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>aaaaa</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/13/a/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-insert-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -689,93 +775,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-mcr-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/30/mcr-install/">利用MCR脱离了matlab环境</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/30/mcr-install/" class="archive-article-date">
-  	<time datetime="2017-07-30T00:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MCR在Ubuntu16-04-2-LTS安装"><a href="#MCR在Ubuntu16-04-2-LTS安装" class="headerlink" title="MCR在Ubuntu16.04.2-LTS安装"></a><strong>MCR在Ubuntu16.04.2-LTS安装</strong></h2><p>假设你有一大串matlab代码，想把这些代码移植到某个软件上，将matlab改写成C/C++无疑是最好的，但是很需要时间，比较简单的办法将m文件编译成动态库供C/C++调用，但这需要在本地安装MCR。这样就可以避免安装matlab了。</p>
-        
-          <a class="article-more-a" href="/2017/07/30/mcr-install/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MCR</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Matlab/" class="article-tag-list-link color2">Matlab</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/30/mcr-install/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -810,7 +809,7 @@ var _hmt = _hmt || [];
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
 		showTags: false
@@ -853,13 +852,21 @@ MathJax.Hub.Queue(function() {
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">搜索</a></li>
+      
+        
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">链接</a></li>
       
         
     </ul>
@@ -908,11 +915,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
+                <a href="javascript:void(0)" class="js-tag color3">随想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -925,6 +932,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -974,6 +985,22 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://earthquake.ustc.edu.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>HaijiangGroup</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://earth.usc.edu/~ybz/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>YehudaGroup</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     

@@ -16,6 +16,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jing&#39;s Note">
   
+    <link rel="alternative" href="/atom.xml" title="Jing&#39;s Note" type="application/atom+xml">
+  
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -61,6 +63,8 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/tags/随笔/">随笔</a></li>
+	        
 				<li><a href="/about">关于</a></li>
 	        
 			</ul>
@@ -68,7 +72,11 @@ var _hmt = _hmt || [];
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">搜索</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">链接</a>
     			
             
 		</nav>
@@ -105,6 +113,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -116,12 +126,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/about">关于</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/about">关于</a></li>
 		        
 				</ul>
 			</nav>
@@ -328,7 +340,7 @@ var _hmt = _hmt || [];
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
 		showTags: false
@@ -371,13 +383,21 @@ MathJax.Hub.Queue(function() {
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">搜索</a></li>
+      
+        
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">链接</a></li>
       
         
     </ul>
@@ -426,11 +446,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
+                <a href="javascript:void(0)" class="js-tag color3">随想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,6 +463,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,6 +516,22 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://earthquake.ustc.edu.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>HaijiangGroup</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://earth.usc.edu/~ybz/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>YehudaGroup</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
