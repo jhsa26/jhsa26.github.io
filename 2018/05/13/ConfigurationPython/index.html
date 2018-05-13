@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Something you should know | Jing&#39;s Note</title>
+  <title>Linux下Python开发环境搭建 | Jing&#39;s Note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are two women I desire to give thanks to. One is that   She gave me a life. The other is coming that  She shares her life with me that makes me not alone in the rest of life. Both of them are de">
+  <meta name="description" content="都说python和matlab一样好学，其实我觉着不然。对于新手来讲，用系统自带的python来写code或者做练习的话，完全不如matlab好。下面我介绍一种适合我的python开发环境，对于踌躇在我该如何选择python开发环境的新手来讲有很大帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Something you should know">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/Feelings/travel-home-md/index.html">
+<meta property="og:title" content="Linux下Python开发环境搭建">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/ConfigurationPython/index.html">
 <meta property="og:site_name" content="Jing&#39;s Note">
-<meta property="og:description" content="There are two women I desire to give thanks to. One is that   She gave me a life. The other is coming that  She shares her life with me that makes me not alone in the rest of life. Both of them are de">
+<meta property="og:description" content="都说python和matlab一样好学，其实我觉着不然。对于新手来讲，用系统自带的python来写code或者做练习的话，完全不如matlab好。下面我介绍一种适合我的python开发环境，对于踌躇在我该如何选择python开发环境的新手来讲有很大帮助。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-13T03:50:28.276Z">
+<meta property="og:updated_time" content="2018-05-13T07:41:36.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Something you should know">
-<meta name="twitter:description" content="There are two women I desire to give thanks to. One is that   She gave me a life. The other is coming that  She shares her life with me that makes me not alone in the rest of life. Both of them are de">
+<meta name="twitter:title" content="Linux下Python开发环境搭建">
+<meta name="twitter:description" content="都说python和matlab一样好学，其实我觉着不然。对于新手来讲，用系统自带的python来写code或者做练习的话，完全不如matlab好。下面我介绍一种适合我的python开发环境，对于踌躇在我该如何选择python开发环境的新手来讲有很大帮助。">
   
     <link rel="alternative" href="/atom.xml" title="Jing&#39;s Note" type="application/atom+xml">
   
@@ -152,37 +152,72 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Feelings/travel-home-md" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ConfigurationPython" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Something you should know
+      Linux下Python开发环境搭建
     </h1>
   
 
         
-        <a href="/2018/05/02/Feelings/travel-home-md/" class="archive-article-date">
-  	<time datetime="2018-05-02T07:39:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+        <a href="/2018/05/13/ConfigurationPython/" class="archive-article-date">
+  	<time datetime="2018-05-13T07:02:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There are two women I desire to give thanks to.</p>
-<p>One is that  </p>
-<p>She gave me a life.</p>
-<p>The other is coming that </p>
-<p>She shares her life with me that makes me not alone in the rest of life.</p>
-<p>Both of them are deserved  to cherish them with my whole life.</p>
-<p>If anyone hurts them, I never let it go. </p>
-<a id="more"></a>
+        <p>都说python和matlab一样好学，其实我觉着不然。对于新手来讲，用系统自带的python来写code或者做练习的话，完全不如matlab好。下面我介绍一种适合我的python开发环境，对于踌躇在我该如何选择python开发环境的新手来讲有很大帮助。<br><a id="more"></a></p>
+<p>#Anaconda+Pycharm<br>不用管Anaconda是什么，你只需要知道你安装了Anaconda，等价于你安装了大部分常用的库(numpy,scipy,pyqt,scikit-learn,pandas…..)，并且Anaconda自带IPython交互式编辑器，以及好用到爆炸的jupyter notebook，待会讲到。而Pycharm是我个人非常喜欢的一款IDE，完全因为它的代码补全功能完爆Anaconda自带的spyder(这个是类似matlab开发界面).</p>
+<p>##Anaconda安装<br>去<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华镜像</a>下载Anaconda3-5.0.1-Linux-x86_64.sh(依赖你自己的系统和你喜欢的python版本，建议用python3以上，该Anaconda自带python3.5)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.0.1-Linux-x86_64.sh</span><br><span class="line"><span class="comment"># 键入你安装的路径(该路径为~/Software/Anaconda3)</span></span><br><span class="line"><span class="comment"># 注意~/Software存在，而~/Software/Anaconda3是不存在的。</span></span><br><span class="line"><span class="comment">#~/Software/Anaconda3开始存在的话则会报错。</span></span><br><span class="line">~/Software/Anaconda3</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装完毕后,Anaconda3的路径被加入到~/.bashrc环境下,激活</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="comment"># 测试Anaconda3安装成功</span></span><br><span class="line">ipython</span><br></pre></td></tr></table></figure>
+<p>出现下面的的图</p>
+<p>就安装成功。</p>
+<p>添加清华源，为conda安装其他库时加速。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+<h3 id="pip安装库"><a href="#pip安装库" class="headerlink" title="pip安装库"></a>pip安装库</h3><h3 id="Ipython"><a href="#Ipython" class="headerlink" title="Ipython"></a>Ipython</h3><h3 id="Jupyter-notebook"><a href="#Jupyter-notebook" class="headerlink" title="Jupyter notebook"></a>Jupyter notebook</h3><h2 id="Pycharm安装"><a href="#Pycharm安装" class="headerlink" title="Pycharm安装"></a>Pycharm安装</h2><p>去<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">Pycharm官网上</a>下载不收费的Pycharm社区版本.</p>
+<h3 id="Pycharm使用简单介绍"><a href="#Pycharm使用简单介绍" class="headerlink" title="Pycharm使用简单介绍"></a>Pycharm使用简单介绍</h3><h4 id="添加解释器"><a href="#添加解释器" class="headerlink" title="添加解释器"></a>添加解释器</h4><h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><p>#### </p>
+<p>Ctrl + B<br>Ctrl + Q<br>Ctrl + J<br>Shift + F10<br>Shift + F9</p>
+<p>#未完待续</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢老板请我吃南昌炒粉!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -194,7 +229,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/feelings/" class="article-tag-list-link color4">feelings</a>
+        			<a href="/categories/blogs/" class="article-tag-list-link color1">blogs</a>
         		</li>
       		
 		</ul>
@@ -249,7 +284,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/02/Feelings/travel-home-md/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/13/ConfigurationPython/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +298,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/05/08/readkmlbypython/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          利用Python下的FastKML包读取KML文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/27/Feelings/post-paper-modify-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">接到GJI杂志的大修意见</div>
+    <a href="/2018/05/08/readkmlbypython/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用Python下的FastKML包读取KML文件</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -293,6 +319,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pip安装库"><span class="toc-number">1.</span> <span class="toc-text">pip安装库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ipython"><span class="toc-number">2.</span> <span class="toc-text">Ipython</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jupyter-notebook"><span class="toc-number">3.</span> <span class="toc-text">Jupyter notebook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pycharm安装"><span class="toc-number"></span> <span class="toc-text">Pycharm安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pycharm使用简单介绍"><span class="toc-number">1.</span> <span class="toc-text">Pycharm使用简单介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加解释器"><span class="toc-number">1.1.</span> <span class="toc-text">添加解释器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用快捷键"><span class="toc-number">1.2.</span> <span class="toc-text">常用快捷键</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -430,6 +469,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">重复地震</a>
               </li>
              
@@ -442,11 +485,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">itchat</a>
+                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,10 +498,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">xml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
             
             <div class="clearfix"></div>
