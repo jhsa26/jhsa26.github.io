@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>deeplearning | Jing&#39;s Note</title>
+  <title>地震学软件CPS3.30安装 | Jing&#39;s Note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用pytorch 0.4 写卷积神经网络，训练2000条频散曲线，预测速度模型。在这个project中遇到一些小的坑。 图像可视化问题在训练过程中，随机从validation样本中抽取几条频散曲线预测速度模型，看拟合的情况。在画图过程中，plt.plot()对这种size的ndarray如（1,400)就不会画出图，而是对（400，）这种size能画出图。另外每次画一个图要plt.show()。要">
+  <meta name="description" content="CPS3.30是圣路易斯大学开源的一个地震学软件，可以用来处理地震数据，具体有合成地震波形、震源参数反演、接收函数成、面波成像、接收函数和面波联合成像等。">
+<meta name="keywords" content="地震学软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="deeplearning">
-<meta property="og:url" content="http://yoursite.com/2018/05/21/deeplearning/index.html">
+<meta property="og:title" content="地震学软件CPS3.30安装">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/cpsinstallation/index.html">
 <meta property="og:site_name" content="Jing&#39;s Note">
-<meta property="og:description" content="用pytorch 0.4 写卷积神经网络，训练2000条频散曲线，预测速度模型。在这个project中遇到一些小的坑。 图像可视化问题在训练过程中，随机从validation样本中抽取几条频散曲线预测速度模型，看拟合的情况。在画图过程中，plt.plot()对这种size的ndarray如（1,400)就不会画出图，而是对（400，）这种size能画出图。另外每次画一个图要plt.show()。要">
+<meta property="og:description" content="CPS3.30是圣路易斯大学开源的一个地震学软件，可以用来处理地震数据，具体有合成地震波形、震源参数反演、接收函数成、面波成像、接收函数和面波联合成像等。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-21T00:25:58.979Z">
+<meta property="og:updated_time" content="2018-06-03T09:55:16.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="deeplearning">
-<meta name="twitter:description" content="用pytorch 0.4 写卷积神经网络，训练2000条频散曲线，预测速度模型。在这个project中遇到一些小的坑。 图像可视化问题在训练过程中，随机从validation样本中抽取几条频散曲线预测速度模型，看拟合的情况。在画图过程中，plt.plot()对这种size的ndarray如（1,400)就不会画出图，而是对（400，）这种size能画出图。另外每次画一个图要plt.show()。要">
+<meta name="twitter:title" content="地震学软件CPS3.30安装">
+<meta name="twitter:description" content="CPS3.30是圣路易斯大学开源的一个地震学软件，可以用来处理地震数据，具体有合成地震波形、震源参数反演、接收函数成、面波成像、接收函数和面波联合成像等。">
   
     <link rel="alternative" href="/atom.xml" title="Jing&#39;s Note" type="application/atom+xml">
   
@@ -158,29 +159,41 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-deeplearning" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-cpsinstallation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      deeplearning
+      地震学软件CPS3.30安装
     </h1>
   
 
         
-        <a href="/2018/05/21/deeplearning/" class="archive-article-date">
-  	<time datetime="2018-05-21T00:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+        <a href="/2018/06/03/cpsinstallation/" class="archive-article-date">
+  	<time datetime="2018-06-03T08:52:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用pytorch 0.4 写卷积神经网络，训练2000条频散曲线，预测速度模型。在这个project中遇到一些小的坑。</p>
-<h2 id="图像可视化问题"><a href="#图像可视化问题" class="headerlink" title="图像可视化问题"></a>图像可视化问题</h2><p>在训练过程中，随机从validation样本中抽取几条频散曲线预测速度模型，看拟合的情况。在画图过程中，plt.plot()对这种size的ndarray如（1,400)就不会画出图，而是对（400，）这种size能画出图。另外每次画一个图要plt.show()。要cha diao</p>
-<p>## </p>
+        <p>CPS3.30是圣路易斯大学开源的一个地震学软件，可以用来处理地震数据，具体有合成地震波形、震源参数反演、接收函数成、面波成像、接收函数和面波联合成像等。<br><a id="more"></a></p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hj@localhost cpslearn]$./Setup</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Checking <span class="keyword">for</span> existence <span class="keyword">of</span> bin and <span class="class"><span class="keyword">lib</span> <span class="title">directories</span></span></span><br><span class="line">Creating Directory bin</span><br><span class="line">Creating Directory <span class="class"><span class="keyword">lib</span></span></span><br><span class="line"><span class="symbol">Usage:</span> Setup SOL WIN32 SOL-EGCS LINUX LINUX64 CYGWIN OSX</span><br><span class="line">   SOL        SUN Solaris Compilers</span><br><span class="line">   SOL-GNU    SUN Solaris <span class="keyword">with</span> gcc/g77 compilers</span><br><span class="line">   CYGWIN     CYGWIN <span class="number">98</span>/NT/<span class="number">2</span>K/XP gcc/g77 Compilers</span><br><span class="line">   CYGWIN40   CYGWIN <span class="number">98</span>/NT/<span class="number">2</span>K/XP gcc/gfortran Compilers</span><br><span class="line">   LINUX40    Linux <span class="keyword">with</span> gcc/gfortran compilers</span><br><span class="line">   LINUX6440  Linux <span class="number">64</span> bit <span class="keyword">with</span> gcc/gfortran compilers</span><br><span class="line">   OSX40      Apple  <span class="keyword">with</span> gcc/gfortran compilers</span><br><span class="line">   OSX40-<span class="number">32</span>   Apple  <span class="keyword">with</span> <span class="number">32</span>-bit gcc/gfortran compilers</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hj@localhost cpslearn]$ uname -a <span class="comment">#查看系统类型</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux localhost.localdomain <span class="number">3.10</span>.<span class="number">0</span><span class="number">-693.17</span>.<span class="number">1</span>.el<span class="number">7</span>.<span class="keyword">x</span><span class="number">86</span>_<span class="number">64</span> <span class="symbol">#1</span> SMP Thu Jan <span class="number">25</span> <span class="number">20</span>:<span class="number">13</span>:<span class="number">58</span> UTC <span class="number">2018</span> <span class="keyword">x</span><span class="number">86</span>_<span class="number">64</span> <span class="keyword">x</span><span class="number">86</span>_<span class="number">64</span> <span class="keyword">x</span><span class="number">86</span>_<span class="number">64</span> GNU/Linux</span><br></pre></td></tr></table></figure>
+<p>系统位<strong>x86_64</strong>对应着64位选用<strong>LINUX6440</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hj@localhost cpslearn]$ ./Setup LINUX6440</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> Checking for existence of bin and lib directories</span><br><span class="line">Directory bin exists</span><br><span class="line">Directory lib exists</span><br><span class="line">Linux AMD <span class="number">64</span>bit SUSE gcc4.?/gfortran</span><br><span class="line">Copying VOLI<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLI<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLII<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLII<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLIII<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLIII<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLIV<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLIV<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLV<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLV<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLVI<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLVI<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLVII<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLVII<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLVIII<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLVIII<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLVIII/gsac.src/Makefile.LNX6440 VOLVIII/gsac.src/Makefile</span><br><span class="line">Copying VOLIX<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLIX<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying VOLX<span class="meta-keyword">/src/</span>Makefile.LNX6440 VOLX<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/src/</span>cmd.unx/Makefile.LNX6440 CALPLOT<span class="meta-keyword">/src/</span>cmd.unx/Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/src/</span>clib.unx/Makefile.LNX6440 CALPLOT<span class="meta-keyword">/src/</span>clib.unx/Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/src/</span>flib.unx/Makefile.LNX6440 CALPLOT<span class="meta-keyword">/src/</span>flib.unx/Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/src/</span>util/Makefile.LNX6440 CALPLOT<span class="meta-keyword">/src/</span>util/Makefile</span><br><span class="line">Copying IRIS/rdseedv5<span class="number">.3</span>.slu/Makefile.LNX6440 IRIS/rdseedv5<span class="number">.3</span>.slu/Makefile</span><br><span class="line">Copying IRIS/DOCOMPILE.LNX6440 IRIS/DOCOMPILE</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/src/</span>XVIG<span class="meta-keyword">/src/</span>Makefile.LNX6440 CALPLOT<span class="meta-keyword">/src/</span>XVIG<span class="meta-keyword">/src/</span>Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/testf/</span>Makefile.LNX6440 CALPLOT<span class="meta-keyword">/testf/</span>Makefile</span><br><span class="line">Copying CALPLOT<span class="meta-keyword">/testc/</span>Makefile.LNX6440 CALPLOT<span class="meta-keyword">/testc/</span>Makefile</span><br><span class="line">Copying CALPLOT/Utility/Makefile.LNX6440 CALPLOT/Utility/Makefile</span><br><span class="line">The proper Makefiles have been installed for your Operating System</span><br><span class="line">Verify that these are correct with respect to compilers, flags</span><br><span class="line">and libraries</span><br><span class="line"></span><br><span class="line">If everything is correct, enter the command</span><br><span class="line">./C for the complete distribution</span><br><span class="line"></span><br><span class="line">Documentation is in the directory DOC in PDF format</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hj@localhost cpslearn]$ ./C</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">gcc -<span class="keyword">g</span> -O2  -D_GNU_SOURCE -DHAVE_CONFIG_H -I. -I. -DLOCALEDIR=\<span class="string">"/usr/local/share/locale\"</span> -c util.c</span><br><span class="line">gcc -<span class="keyword">g</span> -O2  -D_GNU_SOURCE -DHAVE_CONFIG_H -I. -I. -DLOCALEDIR=\<span class="string">"/usr/local/share/locale\"</span> -c <span class="keyword">version</span>.c</span><br><span class="line">gcc -<span class="keyword">g</span> -O2  -D_GNU_SOURCE -DHAVE_CONFIG_H -I. -I. -DLOCALEDIR=\<span class="string">"/usr/local/share/locale\"</span> -c yesno.c</span><br><span class="line">ar -cr libdialog.a trace.o rc.o calendar.o fselect.o timebox.o formbox.o guage.o <span class="keyword">pause</span>.o progressbox.o tailbox.o mixedform.o mixedgauge.o arrows.o buttons.o checklist.o columns.o dlg_keys.o editbox.o inputbox.o inputstr.o menubox.o mouse.o mousewget.o msgbox.o textbox.o ui_getc.o util.o <span class="keyword">version</span>.o yesno.o</span><br><span class="line">ranlib libdialog.a</span><br><span class="line">gcc -<span class="keyword">g</span> -O2  -D_GNU_SOURCE -DHAVE_CONFIG_H -I. -I. -DLOCALEDIR=\<span class="string">"/usr/local/share/locale\"</span> -c dialog.c</span><br><span class="line">gcc -o dialog dialog.o -<span class="keyword">L</span>. -ldialog  -lncurses  -lm -<span class="keyword">L</span>/lib </span><br><span class="line">/usr/bin/ld: skipping incompatible /lib/libncurses.<span class="keyword">so</span>.5 when searching <span class="keyword">for</span> libncurses.<span class="keyword">so</span>.5</span><br><span class="line">making clean</span><br><span class="line"><span class="keyword">rm</span> -f *.*cov *.da *.bb *.bbg</span><br><span class="line"><span class="keyword">rm</span> -f *.i *.o libdialog.a dialog</span><br><span class="line"><span class="keyword">rm</span> -f headers.sed</span><br><span class="line"><span class="keyword">rm</span> -f core *~ tags TAGS</span><br><span class="line">Compile of Computer Programs <span class="keyword">in</span> Seismology is Over</span><br><span class="line">147 programs were compiled</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[hj@localhost cpslearn]$ sudo mkdir /usr/<span class="built_in">local</span>/cps3.30</span><br><span class="line">[hj@localhost cpslearn]$ sudo cp -r * /usr/<span class="built_in">local</span>/cps3.30/</span><br><span class="line">[hj@localhost cpslearn]$ vi ~/.bashrc</span><br><span class="line"><span class="comment">#在文件最后一行添加</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/cps3.30/bin</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="comment">#测试安装的cps程序</span></span><br><span class="line">[hj@localhost cpslearn]$ surf96</span><br><span class="line">Enter h, dcl, dcr</span><br><span class="line">	h = fraction change <span class="keyword">in</span> period to get group vel</span><br><span class="line">			(0.005 is resonable)</span><br><span class="line"><span class="comment">#安装成功</span></span><br></pre></td></tr></table></figure>
+<h2 id="出错集锦"><a href="#出错集锦" class="headerlink" title="出错集锦"></a>出错集锦</h2><p><strong>Q:</strong> 在Centos7.0 编译出错， error: curses.h: No such file or directory</p>
+<p><strong>A:</strong> sudo yum install ncurses-devel ncurses</p>
+<p><strong>Q:</strong> 运行surf96时报错At line 759 of file surf96.f (unit = 1, file = ‘tmpsrfi.00’) Fortran runtime error: End of file</p>
+<p><strong>A:</strong> <strong>删除</strong>当前目录下已经存在的<strong>tmpsrfi.00</strong>以及<strong>sobs.d</strong>文件，同理运行其他cps程序出现这种问题时，请删除之前程序运行时产生的临时文件，</p>
 
       
 
@@ -220,6 +233,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">地震学软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -227,6 +251,10 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/blogs/" class="article-tag-list-link color1">blogs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/地震学/" class="article-tag-list-link color4">地震学</a>
         		</li>
       		
 		</ul>
@@ -281,7 +309,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/21/deeplearning/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/03/cpsinstallation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,8 +324,8 @@ var _hmt = _hmt || [];
 <nav id="article-nav">
   
   
-    <a href="/2018/05/19/fortran-string2num/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Fortran数字转字符串以及字符串转数字</div>
+    <a href="/2018/05/26/deeplearning-conception/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深度学习中一些常见的概念</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -324,7 +352,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像可视化问题"><span class="toc-number">1.</span> <span class="toc-text">图像可视化问题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出错集锦"><span class="toc-number">2.</span> <span class="toc-text">出错集锦</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -490,6 +518,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">kml</a>
               </li>
              
@@ -498,11 +530,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" class="js-tag color4">地震学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">地震学软件</a>
               </li>
             
             <div class="clearfix"></div>
