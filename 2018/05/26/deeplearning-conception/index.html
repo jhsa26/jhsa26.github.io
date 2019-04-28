@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
       
         <p>关于卷积神经网络中的参数<br><a id="more"></a></p>
 <h1 id="in-channel-size-和-out-channel-size"><a href="#in-channel-size-和-out-channel-size" class="headerlink" title="in_channel size 和  out_channel size"></a>in_channel size 和  out_channel size</h1><p><code>inputs-&gt; layer1 -&gt; layer2 -&gt;output</code></p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">layer1中的in_channel <span class="built_in">size</span> 是inputs的特征个数，一个像素点它有RGB三个通道，那么我们输进去的是<span class="number">3</span>；一个苹果它也有大小，颜色，以及价格等几个特征</span><br><span class="line">layer1中的out_channel <span class="built_in">size</span> 是layer2 输入的in_channel <span class="built_in">size</span></span><br><span class="line">in_channel <span class="built_in">size</span>: 输入多少个神经元</span><br><span class="line">out_channel <span class="built_in">size</span>:  是指输出多少个神经元</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">layer1中的in_channel <span class="built_in">size</span> 是inputs的特征个数，一个像素点它有RGB三个通道，那么我们输进去的是<span class="number">3</span>；一个苹果它也有大小，颜色，以及价格等几个特征</span><br><span class="line">layer1中的out_channel <span class="built_in">size</span> 是layer2 输入的in_channel <span class="built_in">size</span></span><br><span class="line">in_channel <span class="built_in">size</span>: 输入多少个神经元</span><br><span class="line">out_channel <span class="built_in">size</span>:  是指输出多少个神经元</span><br></pre></td></tr></table></figure>
 <p> in genearal, a 2d tensor in cnns is of size batch x channels x height x width. for the actual input to the network, channels is usually 3 for RGB or 1 if it’s greyscale. For the outputs of layers in the network, output channels is analagous to the number of neurons, or the number of hidden units, of a layers. So, the latter-output channels are the number of filters in one layer, while input channels are the number of filters in one layer, while input channels are the number of filters in the incoming layer.</p>
 <h1 id="卷积步长-stride-amp-卷积核大小-kernel-size-amp-padding参数解释"><a href="#卷积步长-stride-amp-卷积核大小-kernel-size-amp-padding参数解释" class="headerlink" title="卷积步长(stride)&amp;卷积核大小(kernel size) &amp; padding参数解释"></a><a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="noopener">卷积步长(stride)&amp;卷积核大小(kernel size) &amp; padding参数解释</a></h1><p>stride: 卷积核在input上滑动的步长<br>padding: 滑动卷积过程中，由于input size和卷积核大小的原因，使得卷积核有时不能把所有input的元素都考虑进去，进而在input四周补零的操作</p>
 <p>我们有一张64x64大小的图片，含有R-G-B三个通道。图片的输入大小为64x64x3，在这种情况下，<br>3是我们的input channel大小也就是in_channel size. 现在你想对这个input进行卷积操作，<br>卷积核设置为5x5x3，这里的5表示kernel size在图像的width和height方向都是5，在padding的情况下，stride=1的情况下，<br>我们得到的输出为64x64x1，width和height与原来的input一样，类似tensorflow中padding的SAME选项。<br>如果有100个kernels，各自去跟原来的input进行卷积操作，output的大小就为64x64x100 (padding的方式为SAME，卷积后保证output的widht和height与input的相同)这里的out_channels为100.</p>
@@ -482,23 +482,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">obspy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">地震目录格式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Obspy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color5">重复地震</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,14 +491,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">画图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">重复地震</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,6 +506,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Fortran</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">obspy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">地震目录格式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">kml</a>
               </li>
              
@@ -538,19 +534,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MCR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">写作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Fortran</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Obspy</a>
               </li>
             
             <div class="clearfix"></div>
